@@ -16,6 +16,12 @@ const tutorials = [
 
 
 
-const titleCased = (string) => { 
-  return tutorials.map( string => string.charAt(0).toUpperCase() + string.toLowerCase()  ); 
+const titleCased = () => { 
+  return tutorials.map( string => {
+    let newArray = string.split(" ");
+    const capitalArray = newArray.map(word => {
+      return word.charAt(0).toUpperCase() + word.slice(1); //slice(1) takes the rest of word after first letter
+    }) 
+    return capitalArray.join(" ") //reversing split(), making back into string 
+    });
 }
